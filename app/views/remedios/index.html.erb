@@ -1,5 +1,7 @@
 <h1>Toma Teus Remédios</h1>
-<h2>Próximo Remédio <%= @proximo_remedio.first.nome %> </h2>
+<% if @proximo_remedio.first %>
+  <h2>Próximo Remédio <%= @proximo_remedio.first.nome %> </h2>
+<% end %>
 <h3>Tratamentos em Andamento</h3>
 <table>
   <thead>
