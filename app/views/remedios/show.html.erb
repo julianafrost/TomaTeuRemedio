@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @remedio.nome %>
+</p>
+
+<p>
+  <strong>Dosagem:</strong>
+  <%= @remedio.dosagem %>
+</p>
+
+<p>
+  <strong>Hora:</strong>
+  <%= @remedio.hora %>
+</p>
+
+<p>
+  <strong>Frequencia:</strong>
+  <%= @remedio.frequencia %>
+</p>
+
+<p>
+  <strong>Data inicio:</strong>
+  <%= @remedio.data_inicio %>
+</p>
+
+<p>
+  <strong>Data fim:</strong>
+  <%= @remedio.data_fim %>
+</p>
+
+<%= link_to 'Edit', edit_remedio_path(@remedio) %> |
+<%= link_to 'Back', remedios_path %>

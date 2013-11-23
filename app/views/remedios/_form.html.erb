@@ -1,0 +1,41 @@
+<%= form_for(@remedio) do |f| %>
+  <% if @remedio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@remedio.errors.count, "error") %> prohibited this remedio from being saved:</h2>
+
+      <ul>
+      <% @remedio.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= "Nome do Remédio" %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :dosagem %><br>
+    <%= f.text_field :dosagem %>
+  </div>
+  <div class="field">
+    <%= f.label :frequencia %><br>
+    <%= f.number_field :frequencia %>
+  </div>
+  <div class="field">
+    <%= "Hora da primeira dosagem" %><br>
+    <%= f.text_field :hora %>
+  </div>
+  <div class="field">
+    <%= f.label :data_inicio %><br>
+    <%= f.date_select :data_inicio %>
+  </div>
+  <div class="field">
+    <%= f.label :data_fim %><br>
+    <%= f.date_select :data_fim %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Adicionar Remédio" %>
+  </div>
+<% end %>

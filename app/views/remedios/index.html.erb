@@ -1,0 +1,69 @@
+<h1>Toma Teus Remédios</h1>
+<h2>Próximo Remédio <%= @proximo_remedio.first.nome %> </h2>
+<h3>Tratamentos em Andamento</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Remédio</th>
+      <th>Dosagem</th>
+      <th>Frequencia</th>
+      <th>Hora da primeira dosagem</th>
+      <th>Data inicio</th>
+      <th>Data fim</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @remedios_ativos.each do |remedio| %>
+      <tr>
+        <td><%= remedio.nome %></td>
+        <td><%= remedio.dosagem %></td>
+        <td><%= remedio.frequencia %></td>
+        <td><%= remedio.hora %></td>
+        <td><%= remedio.data_inicio %></td>
+        <td><%= remedio.data_fim %></td>
+        <td><%= link_to 'Visualizar', remedio %></td>
+        <td><%= link_to 'Editar', edit_remedio_path(remedio) %></td>
+        <td><%= link_to 'Apagar', remedio, method: :delete, data: { confirm: 'Você quer mesmo apagar?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Adicionar novo Remédio', new_remedio_path %>
+<br>
+<h3>Tratamentos Realizados</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Remédio</th>
+      <th>Dosagem</th>
+      <th>Frequencia</th>
+      <th>Hora da primeira dosagem</th>
+      <th>Data inicio</th>
+      <th>Data fim</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @remedios_vencidos.each do |remedio| %>
+      <tr>
+        <td><%= remedio.nome %></td>
+        <td><%= remedio.dosagem %></td>
+        <td><%= remedio.frequencia %></td>
+        <td><%= remedio.hora %></td>
+        <td><%= remedio.data_inicio %></td>
+        <td><%= remedio.data_fim %></td>
+        <td><%= link_to 'Visualizar', remedio %></td>
+        <td><%= link_to 'Editar', edit_remedio_path(remedio) %></td>
+        <td><%= link_to 'Apagar', remedio, method: :delete, data: { confirm: 'Você quer mesmo apagar?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
